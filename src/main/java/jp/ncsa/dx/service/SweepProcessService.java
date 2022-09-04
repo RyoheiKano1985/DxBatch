@@ -2,7 +2,7 @@ package jp.ncsa.dx.service;
 
 import org.springframework.stereotype.Component;
 
-import jp.ncsa.dx.type.BatchExecuteResultTypes;
+import jp.ncsa.dx.type.ExecuteResultTypes;
 
 /**
  * スイープ処理サービス
@@ -15,19 +15,19 @@ public class SweepProcessService {
 	 * 
 	 * @param status ステータス
 	 */
-	public BatchExecuteResultTypes execute(int status) {
+	public ExecuteResultTypes execute(int status) {
 
 		// 実行結果
-		BatchExecuteResultTypes executeResult = null;
+		ExecuteResultTypes executeResult = null;
 
-		if (status == BatchExecuteResultTypes.SUCCESS.getCode()) {
-			executeResult = BatchExecuteResultTypes.SUCCESS;
+		if (status == ExecuteResultTypes.SUCCESS.getCode()) {
+			executeResult = ExecuteResultTypes.SUCCESS;
 			System.out.println("正常終了する");
-		} else if (status == BatchExecuteResultTypes.ERROR.getCode()) {
-			executeResult = BatchExecuteResultTypes.ERROR;
+		} else if (status == ExecuteResultTypes.ERROR.getCode()) {
+			executeResult = ExecuteResultTypes.ERROR;
 			System.out.println("異常終了する");
-		} else if (status == BatchExecuteResultTypes.WARN.getCode()) {
-			executeResult = BatchExecuteResultTypes.WARN;
+		} else if (status == ExecuteResultTypes.WARN.getCode()) {
+			executeResult = ExecuteResultTypes.WARN;
 			System.out.println("警告終了する");
 		} else {
 			throw new RuntimeException("想定外の例外が発生しました。");

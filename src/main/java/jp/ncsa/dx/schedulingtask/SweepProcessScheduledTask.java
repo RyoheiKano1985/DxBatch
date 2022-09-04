@@ -5,7 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import jp.ncsa.dx.service.SweepProcessService;
-import jp.ncsa.dx.type.BatchExecuteResultTypes;
+import jp.ncsa.dx.type.ExecuteResultTypes;
 
 /**
  * 
@@ -33,14 +33,14 @@ public class SweepProcessScheduledTask {
 			System.out.println("スイープ処理を開始します。");
 
 			// スイープ処理の実行
-			BatchExecuteResultTypes exeResult = sweepProcessService.execute(0);
+			ExecuteResultTypes exeResult = sweepProcessService.execute(0);
 
 			// 終了ログ ※本来はログファイルに出力する。
 			System.out.println("スイープ処理を終了します。実行結果＝" + exeResult);
 
 		} catch (Throwable e) {
 			// 終了ログ ※本来はログファイルに出力する。
-			System.out.println("スイープ処理を終了します。実行結果＝" + BatchExecuteResultTypes.ERROR);
+			System.out.println("スイープ処理を終了します。実行結果＝" + ExecuteResultTypes.ERROR);
 
 		}
 	}
