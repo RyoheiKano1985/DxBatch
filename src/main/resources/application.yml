@@ -4,5 +4,7 @@
 #0 0 0 1 * * 毎月、1日0時0分0秒に実行.
 #0 0 12 */5 * *  毎月、5の倍数の日の12時0分0秒に実行.
 #0 0 9-18 * * 1-5  月から金曜日の9時から18時の0分0秒時に実行.
-cron:
-  sweepProcess: 0 * * * * *
+scheduled:
+  timezone: Asia/Tokyo
+  cron:
+    sweepProcess: 0 * * * * *
